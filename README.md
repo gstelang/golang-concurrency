@@ -1,5 +1,5 @@
 # golang-concurrency
-* TODO implement the key ideas from below.
+* Implement the key ideas from below.
 
 # Channel patterns: 
 https://go.dev/talks/2012/concurrency.slide#1
