@@ -13,10 +13,11 @@ https://go101.org/article/channel-use-cases.html
 * Futures/Promises
   * [Return receive-only channels as results](futures/example1/main.go)
   * [Pass send-only channels as arguments](futures/example2/main.go)
-  * [The first response wins](futures/example3/main.go))
+  * [The first response wins](futures/example3/main.go)
 * Channels for notifications
-  * 1-to-1 notification by sending a value to a channel
-  * 1-to-1 notification by receiving a value from a channel
+  * Fasters are notified by slowers
+    * [1-to-1 notification by sending a value to a channel](notifications/example1/main.go)
+    * [1-to-1 notification by receiving a value from a channel](notifications/example1/main.go)
   * N-to-1 and 1-to-N notifications
   * Broadcast (1-to-N) notifications by closing a channel
   * Timer: scheduled notification
