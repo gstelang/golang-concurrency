@@ -11,9 +11,9 @@ https://go.dev/talks/2012/concurrency.slide#1
 # Channel use cases: 
 https://go101.org/article/channel-use-cases.html
 * Futures/Promises
-  * Return receive-only channels as results
-  * Pass send-only channels as arguments
-  * The first response wins
+  * [Return receive-only channels as results](futures/example1/main.go)
+  * [Pass send-only channels as arguments](futures/example2/main.go)
+  * [The first response wins](futures/example3/main.go))
 * Channels for notifications
   * 1-to-1 notification by sending a value to a channel
   * 1-to-1 notification by receiving a value from a channel
