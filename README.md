@@ -30,15 +30,8 @@ https://go101.org/article/channel-use-cases.html
 * Mutex locks
   * [Send only](mutex-locks/example1/main.go)
   * [Receive only](mutex-locks/example2/main.go)
-* As Counting Semaphores
-* Dialogue (Ping-Pong)
-* Channel Encapsulated in Channel
-* Peak/burst limiting
-* timeout
-* Ticker
-* Rate limiting
 * Data Flow Manipulations
-  * Data generation/collecting/loading
+  * [Data generation/collecting/loading](data-flow/example1/main.go)
   * Data aggregation
   * Data division
   * Data composition
@@ -48,5 +41,12 @@ https://go101.org/article/channel-use-cases.html
   * Data validation/filtering
   * Data serving/saving
   * Data flow system assembling
-
+* Other
+  * As Counting Semaphores
+  * Dialogue (Ping-Pong)
+  * Channel Encapsulated in Channel
+  * Peak/burst limiting
+  * timeout
+  * Ticker
+  * Rate limiting
 
