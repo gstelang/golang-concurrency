@@ -21,6 +21,8 @@ https://go101.org/article/channel-use-cases.html
   * N notifications [N-to-1 and 1-to-N notifications](notificatinos/example3/main.go)
   * [Timer: scheduled notification](notifications/example4/main.go)
 * Mutex locks
+  * [Send only](mutex-locks/example1/main.go)
+  * [Receive only](mutex-locks/example2/main.go)
 * As Counting Semaphores
 * Dialogue (Ping-Pong)
 * Channel Encapsulated in Channel
