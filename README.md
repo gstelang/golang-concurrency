@@ -1,8 +1,15 @@
 # golang-concurrency
 * Implement the key ideas from below.
 
+# Most common ones 
+* Worker Pool Pattern
+* Pipeline Pattern
+* Fan-In Pattern
+* Semaphore Pattern
+* Generator Pattern
+
 # Channel patterns: 
-https://go.dev/talks/2012/concurrency.slide#1
+Rob pike's https://go.dev/talks/2012/concurrency.slide#1
 * Multiplexing
 * Fan in
 * Restoring sequence
