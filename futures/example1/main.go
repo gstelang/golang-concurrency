@@ -9,7 +9,7 @@ import (
 // longRunningRequest shouldn't block and does so by returning a channel.
 
 // 1. Run the long running job in a goroutine...duh!
-// 1.1 Wrtie to the channel once result is available.
+// 1.1 Write to the channel once result is available.
 // 2. Return a receive only channel.
 
 // longRunningRequest will take about ~3 seconds instead of 3+3
