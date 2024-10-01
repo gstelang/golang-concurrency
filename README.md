@@ -2,18 +2,13 @@
 * Implement the key ideas from below.
 
 # Most common ones 
-* Worker Pool Pattern
+* [Worker Pool Pattern](common/worker-pool/main.go)
+* Semaphore Pattern
+  * [Simple](common/semaphore/example1/main.go)
+  * [Semaphore as a separate struct](common/semaphore/example2/main.go)
 * Pipeline Pattern
 * Fan-In Pattern
-* Semaphore Pattern
 * Generator Pattern
-
-# Channel patterns: 
-Rob pike's https://go.dev/talks/2012/concurrency.slide#1
-* Multiplexing
-* Fan in
-* Restoring sequence
-* Daisy chain
 
 # Channel use cases: 
 https://go101.org/article/channel-use-cases.html
@@ -50,3 +45,9 @@ https://go101.org/article/channel-use-cases.html
   * Ticker
   * Rate limiting
 
+# Channel patterns: 
+Rob pike's https://go.dev/talks/2012/concurrency.slide#1
+* Multiplexing
+* Fan in
+* Restoring sequence
+* Daisy chain
