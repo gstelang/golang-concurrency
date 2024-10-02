@@ -20,7 +20,9 @@ https://go101.org/article/channel-use-cases.html
   * Fasters are notified by slowers
     * [1-to-1 notification by sending a value to a channel](notifications/example1/main.go)
     * [1-to-1 notification by receiving a value from a channel](notifications/example1/main.go)
-  * N notifications [N-to-1 and 1-to-N notifications](notifications/example3/main.go)
+  * N notifications
+     * [N-to-1 and 1-to-N notifications](notifications/example3/main.go)
+     * [Signal all goroutines on finish](notifications/example5/main.go)
   * [Timer: scheduled notification](notifications/example4/main.go)
 * Mutex locks
   * [Send only](mutex-locks/example1/main.go)
