@@ -64,8 +64,17 @@ func main() {
 	numGoRoutines := 5
 	target := 989204
 	var wg sync.WaitGroup
+	// sliceSize := len(arr) / numGoRoutines
 
 	for i := 1; i <= numGoRoutines; i++ {
+		// split the array into equal chunks
+		// start := id * sliceSize
+		// end := start + sliceSize
+		// if id == numGoRoutines-1 {
+		// // Last goroutine takes any remaining elements
+		// 	end = len(arr)
+		// }
+		// and pass arr[start:end]
 		wg.Add(1)
 		go search(i, target, &wg)
 	}
