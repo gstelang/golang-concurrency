@@ -7,6 +7,7 @@ import (
 )
 
 const maxInt = 100000000
+const numGoRoutines = 5
 
 var arr = fillArr(maxInt)
 var done = make(chan bool, 1)
@@ -32,11 +33,11 @@ func writeToResult(str string) {
 	}
 }
 
-func search(goRoutineId int, target int, wg *sync.WaitGroup) {
+func search(goRoutineId int, slice []int, target int, wg *sync.WaitGroup) {
 	defer wg.Done()
 	fmt.Printf("Goroutine: %d \n", goRoutineId)
 
-	for _, val := range arr {
+	for _, val := range slice {
 		select {
 		case val, ok := <-done:
 			if !ok || val == true {
@@ -46,6 +47,7 @@ func search(goRoutineId int, target int, wg *sync.WaitGroup) {
 		default:
 			if val == target {
 				done <- true
+				fmt.Printf("Goroutine %d now sending signal!", goRoutineId)
 				// signal close immediately
 				close(done)
 				writeToResult("Found it")
@@ -59,24 +61,29 @@ func search(goRoutineId int, target int, wg *sync.WaitGroup) {
 	writeToResult("Not Found")
 }
 
+func splitEqually(counter int) (int, int) {
+
+	sliceSize := len(arr) / numGoRoutines
+
+	// split the array into equal chunks
+	start := counter * sliceSize
+	end := start + sliceSize
+	if counter == numGoRoutines-1 {
+		// Last goroutine takes any remaining elements
+		end = len(arr)
+	}
+	return start, end
+}
+
 func main() {
 
-	numGoRoutines := 5
 	target := 989204
 	var wg sync.WaitGroup
-	// sliceSize := len(arr) / numGoRoutines
 
-	for i := 1; i <= numGoRoutines; i++ {
-		// split the array into equal chunks
-		// start := id * sliceSize
-		// end := start + sliceSize
-		// if id == numGoRoutines-1 {
-		// // Last goroutine takes any remaining elements
-		// 	end = len(arr)
-		// }
-		// and pass arr[start:end]
+	for i := 0; i < numGoRoutines; i++ {
 		wg.Add(1)
-		go search(i, target, &wg)
+		start, end := splitEqually(i)
+		go search(i, arr[start:end], target, &wg)
 	}
 
 	wg.Wait()
@@ -84,15 +91,14 @@ func main() {
 	close(result)
 }
 
-
-// run with race 
+// run with race
 // go run --race main.go
 // you should see the output like
-// Goroutine: 1 
-// Goroutine: 5 
-// Goroutine: 4 
-// Goroutine: 2 
-// Goroutine: 3 
+// Goroutine: 1
+// Goroutine: 5
+// Goroutine: 4
+// Goroutine: 2
+// Goroutine: 3
 // Goroutine returning 4
 // Goroutine returning 2
 // Goroutine returning 3
