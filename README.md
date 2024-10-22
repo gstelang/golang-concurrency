@@ -10,6 +10,8 @@
 * Fan-In Pattern
 * Generator Pattern
   * [Prime sieve](common/generator/prime_sieve/main.go)
+* Parallel get
+  * [Parallel get](common/parallel-get/main.go)
 
 # Channel use cases: 
 https://go101.org/article/channel-use-cases.html
