@@ -48,6 +48,7 @@ func search(goRoutineId int, slice []int, target int, wg *sync.WaitGroup) {
 			if val == target {
 				done <- true
 				fmt.Printf("Goroutine %d now sending signal!", goRoutineId)
+				// Remember only 1 goroutine can close the channel (not many)
 				// signal close immediately
 				close(done)
 				writeToResult("Found it")
